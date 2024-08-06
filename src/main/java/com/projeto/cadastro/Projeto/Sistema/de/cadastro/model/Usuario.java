@@ -4,8 +4,10 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.*;
 import org.springframework.security.core.userdetails.UserDetails;
+import jakarta.validation.constraints.NotBlank;
 
-import jakarta.annotation.Generated;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,8 +32,15 @@ public class Usuario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nome;
+
+    
+    @Column(nullable = false, unique = true)
     private String email;
+
+    @NotBlank
+    @Column(nullable = false)
     private String senha;
 
     @Override
@@ -41,7 +50,9 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getPassword() {
-       return senha;
+    
+        
+        return senha;
     }
 
     @Override
