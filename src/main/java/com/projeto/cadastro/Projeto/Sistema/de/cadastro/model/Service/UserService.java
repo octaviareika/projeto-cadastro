@@ -1,16 +1,18 @@
 package com.projeto.cadastro.Projeto.Sistema.de.cadastro.model.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+//import org.springframework.web.bind.annotation.GetMapping;
 
 import com.projeto.cadastro.Projeto.Sistema.de.cadastro.Repository.UsuarioRepository;
 import com.projeto.cadastro.Projeto.Sistema.de.cadastro.model.Usuario;
 
 @Service
 public class UserService {
-    // Service geralmente utiliza o Repository para acessar o banco de dados.
     @Autowired
     private UsuarioRepository usuarioRepository;
 
@@ -25,6 +27,15 @@ public class UserService {
 
         return usuarioRepository.save(usuario);
 
+    }
+
+    // listar usuario 
+    public List<Usuario> listarUsuario(){
+
+        if (usuarioRepository.findAll().isEmpty()) {
+            throw new IllegalArgumentException("Nenhum usuário cadastrado.");
+        }
+        return usuarioRepository.findAll();
     }
     
 }

@@ -26,7 +26,8 @@ public class SecurityConfiguration {
             .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // configurando a sessão para não ser criada, não
             // devendo criar sessão para armazenar o estado do usuário
             .authorizeHttpRequests(auth -> auth // autoriza as requisições
-                .requestMatchers("/user").permitAll() // permite que a requisição de login seja feita sem autenticação
+                .requestMatchers("/user").permitAll()
+                .requestMatchers("/user/listar").permitAll() // permite que a requisição de login seja feita sem autenticação
                 .anyRequest().authenticated()) // qualquer outra requisição deve ser autenticada
             .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class); // adiciona o filtro de segurança antes do filtro de autenticação
 

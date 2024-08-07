@@ -20,6 +20,7 @@ public class DB {
                String url = props.getProperty("spring.datasource.url");
                try {
                 connection = DriverManager.getConnection(url, props);
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
