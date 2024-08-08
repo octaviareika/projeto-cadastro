@@ -37,5 +37,15 @@ public class UserService {
         }
         return usuarioRepository.findAll();
     }
+
+
+    // deletar usuario por id
+    public void deleteUsuario(Long id) {
+
+        if (!usuarioRepository.existsById(id)){
+            throw new IllegalArgumentException("Usuário não encontrado.");
+        }
+        usuarioRepository.deleteById(id);
+    }
     
 }
