@@ -31,7 +31,8 @@ async function cadastrarUsuario(){
     const email = document.getElementById('email').value;
    // console.log(email);
 
-    const response = await fetch('http://localhost:8080/user', {
+    const response = await fetch('http://localhost:8080/user', { // fetch é uma função assíncrona
+        // espera a resposta do servidor
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -53,7 +54,7 @@ async function acessarRota(){
     try {
         const response = await fetch('http://localhost:8080/user/listar');
         if (!response.ok) throw new Error('Falha ao obter resposta do servidor');
-        return await response.json();
+        return await response.json(); // retorna o json da resposta
     } catch(error){
         console.error('Erro ao acessar rota: ', error);
         throw error; // 
