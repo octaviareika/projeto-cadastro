@@ -109,46 +109,58 @@ header * {
    
 }
 
+
 .destaques {
     margin-right: 150px;
+    color: #000;
     border: transparent;
     border-style: solid;
     padding: 40px;
+    border: #124609;
     border-radius: 10px;
     background-image: url("/ProjetoFront/foto/oliur-Z8I-BhVtzn0-unsplash.jpg");
-    /*tamanho da imagem*/
-
     background-size: cover;
-    /*tamanho da imagem tem q ser pequena*/
-
     background-position: center;
-    position: relative; /* Necessário para o posicionamento absoluto do pseudo-elemento */
-
+    position: relative;
+    z-index: 1;
+    
 }
 
 .destaques::before {
+     content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    z-index: -1; /* Coloca o pseudo-elemento acima da imagem de fundo */
+    
+}
+
+
+.depoimento {
+    margin-left: 150px;
+    border: #124609;
+    
+    padding: 40px;
+    border-radius: 10px;
+    background-image: url("/ProjetoFront/foto/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.depoimento::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5); /* Verde com 50% de transparência */
-    z-index: 1; /* Coloca o pseudo-elemento acima da imagem de fundo */
-}
-
-.destaques:hover {
-    color: #124609;
-    transition: 0.5s;
-    padding: 60px;
-}
-
-.depoimento {
-    margin-left: 150px;
-    border: #124609;
-    border-style: solid;
-    padding: 40px;
-    border-radius: 10px;
-
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
 }
 
