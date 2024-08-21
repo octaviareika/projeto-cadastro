@@ -6,7 +6,9 @@
     box-sizing: border-box;
 }
 
-body, html {
+.corpo, html {
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
     height: 100%;
     background: #ebeeef;
@@ -27,4 +29,126 @@ body, html {
 .li-principal {
     margin: 20px;
     text-decoration: none;
+    /*tirar o sublinhado*/
+
+    
 }
+
+.li-principal a {
+    text-decoration: none; /* Remove o sublinhado dos links dentro de .li-principal */
+    color: #fff;
+
+}
+
+.cabecalho {
+    position: relative;
+    background-image: url("/ProjetoFront/foto/alicja-ziaj-AOjmfr3ofSY-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 30%;
+
+}
+
+.cabecalho::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 128, 0, 0.5); /* Verde com 50% de transparência */
+    z-index: 1; /* Coloca o pseudo-elemento acima da imagem de fundo */
+}
+
+header * {
+    position: relative; /* Garante que o conteúdo do header fique acima do pseudo-elemento */
+    z-index: 2;
+}
+
+.titulo-verde-bank {
+    color: #57b846;
+
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
+    text-shadow: 1px 1px 2px #000; /* Adiciona borda preta às letras */
+
+    
+}
+.paragrafo {
+    color: #357e28;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 10px;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 40%;
+    background-color: #d7fed0;
+    
+}
+
+.paragrafo:hover {
+    color: #124609;
+    transition: 0.5s;
+    letter-spacing: 2px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+
+}
+
+.secao {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+   
+}
+
+.destaques {
+    margin-right: 150px;
+    border: transparent;
+    border-style: solid;
+    padding: 40px;
+    border-radius: 10px;
+    background-image: url("/ProjetoFront/foto/oliur-Z8I-BhVtzn0-unsplash.jpg");
+    /*tamanho da imagem*/
+
+    background-size: cover;
+    /*tamanho da imagem tem q ser pequena*/
+
+    background-position: center;
+    position: relative; /* Necessário para o posicionamento absoluto do pseudo-elemento */
+
+}
+
+.destaques::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Verde com 50% de transparência */
+    z-index: 1; /* Coloca o pseudo-elemento acima da imagem de fundo */
+}
+
+.destaques:hover {
+    color: #124609;
+    transition: 0.5s;
+    padding: 60px;
+}
+
+.depoimento {
+    margin-left: 150px;
+    border: #124609;
+    border-style: solid;
+    padding: 40px;
+    border-radius: 10px;
+
+}
+
