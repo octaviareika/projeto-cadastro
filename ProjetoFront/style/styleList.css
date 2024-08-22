@@ -165,6 +165,7 @@ header * {
     text-decoration: none;
     /*tirar as bolinhas em cada topico*/
     list-style-type: none;
+    color: #000;
 }
 
 
@@ -213,4 +214,10 @@ header * {
     background-color:  #3e932f;
     transition:  0.5s;
 
+}
+
+.lista-depo {
+    text-decoration: none;
+    /*tirar as bolinhas em cada topico*/
+    list-style-type: none;
 }
