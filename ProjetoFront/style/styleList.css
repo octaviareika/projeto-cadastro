@@ -112,10 +112,10 @@ header * {
 
 .destaques {
     margin-right: 150px;
-    color: #000;
+    color: #0b4f06;
     border: transparent;
     border-style: solid;
-    padding: 40px;
+    padding: 70px;
     border: #124609;
     border-radius: 10px;
     background-image: url("/ProjetoFront/foto/oliur-Z8I-BhVtzn0-unsplash.jpg");
@@ -139,12 +139,40 @@ header * {
     
 }
 
+.secao-destaque {
+    border: #3e932f;
+    border-style: solid;
+    text-align: center;
+    border-radius: 10px;
+    border-width: 1px;
+    margin: 10px;
+    color: #318a22;
+}
+
+.secao-destaque:hover {
+    border: #3e932f;
+    border-style: solid;
+    text-align: center;
+    border-radius: 10px;
+    border-width: 1px;
+    margin: 10px;
+    color: #144a0b;
+    background-color:  #3e932f;
+    transition:  0.5s;
+}
+
+.lista-d {
+    text-decoration: none;
+    /*tirar as bolinhas em cada topico*/
+    list-style-type: none;
+}
+
 
 .depoimento {
     margin-left: 150px;
     border: #124609;
     
-    padding: 40px;
+    padding: 70px;
     border-radius: 10px;
     background-image: url("/ProjetoFront/foto/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg");
     background-size: cover;
@@ -164,3 +192,25 @@ header * {
     z-index: -1;
 }
 
+.titulo-depo {
+    border: #3e932f;
+    border-style: solid;
+    text-align: center;
+    border-radius: 10px;
+    border-width: 1px;
+    margin: 10px;
+    color: #318a22;
+}
+
+.titulo-depo:hover {
+    border: #3e932f;
+    border-style: solid;
+    text-align: center;
+    border-radius: 10px;
+    border-width: 1px;
+    margin: 10px;
+    color: #144a0b;
+    background-color:  #3e932f;
+    transition:  0.5s;
+
+}
