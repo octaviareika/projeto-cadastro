@@ -148,6 +148,9 @@ header * {
     margin: 10px;
     color: #318a22;
 }
+.paragrafo-destaque {
+    color: #000;
+}
 
 .secao-destaque:hover {
     border: #3e932f;
@@ -162,12 +165,22 @@ header * {
 }
 
 .lista-d {
-    text-decoration: none;
     /*tirar as bolinhas em cada topico*/
     list-style-type: none;
-    color: #000;
+    color: #0b5b06;
+    text-shadow: 2px 2px 4px rgba(69, 238, 17, 0.7); /* Adiciona um sombreado preto com 50% de opacidade */
+    font-weight: bolder;
+    text-align: center;
 }
 
+.lista-d:hover {
+    color: #0b5b06;
+    transition: 0.5s;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(69, 238, 17, 0.7); /* Adiciona um sombreado preto com 50% de opacidade */
+    font-weight: bolder;
+    
+}
 
 .depoimento {
     margin-left: 150px;
@@ -220,4 +233,8 @@ header * {
     text-decoration: none;
     /*tirar as bolinhas em cada topico*/
     list-style-type: none;
+    color: #0b5b06;
+    text-shadow: 2px 2px 4px rgba(69, 238, 17, 0.7); /* Adiciona um sombreado preto com 50% de opacidade */
+    font-weight: bolder;
+    text-align: center;
 }
