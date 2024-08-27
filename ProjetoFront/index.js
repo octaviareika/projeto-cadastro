@@ -11,10 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    const formRemove = document.querySelector('.formulario-remover');
+    if (formRemove){
+        formRemove.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            await deletarUsuario();
+        });
+    }
+
     const botaoLista = document.querySelector('.botao-lista');
     if (botaoLista) {
         botaoLista.addEventListener('click', async () => {
-            window.location.href = 'listar.html';
+            window.location.href = 'listar.html'; // mudar isso aqui
         });
     }
     
@@ -101,4 +109,23 @@ async function listarUsuarios(){
     }
 }
 
+async function deletarUsuario(){
+
+    var id = document.getElementById('id').value;
+
+    const response = await fetch(`http://localhost:8080/user/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    if (response.ok) {
+        alert('Usuário deletado com sucesso!');
+    }
+    else {
+        alert('Erro ao deletar usuário!');
+    }
+
+}
 //cadastrarUsuario();

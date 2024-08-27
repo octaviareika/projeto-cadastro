@@ -27,7 +27,8 @@ public class SecurityConfiguration {
             // devendo criar sessão para armazenar o estado do usuário
             .authorizeHttpRequests(auth -> auth // autoriza as requisições
                 .requestMatchers("/user").permitAll()
-                .requestMatchers("/user/listar").permitAll() // permite que a requisição de login seja feita sem autenticação
+                .requestMatchers("/user/listar").permitAll()
+                .requestMatchers("/user/{id}").permitAll() // permite que a requisição de login seja feita sem autenticação
                 .anyRequest().authenticated()) // qualquer outra requisição deve ser autenticada
             .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class); // adiciona o filtro de segurança antes do filtro de autenticação
 

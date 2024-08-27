@@ -50,12 +50,28 @@
 .titulo-usuario {
     font-size: 20px;
     font-weight: bold;
-    color: #000;
+    color: #a6f282;
     margin-bottom: 10px;
-    background-color: #57b846;
+    background-image: url("/ProjetoFront/foto/ryan-born-x8i6FfaZAbs-unsplash.jpg");
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     text-align: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.titulo-usuario::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(87, 184, 70, 0.4);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .usuario-total {
@@ -72,4 +88,25 @@
 .usuario {
     padding: 30px;
     text-align: center;
+}
+
+.titulo-remover {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.formulario-remover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+#id {
+    width: 300px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
