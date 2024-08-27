@@ -78,7 +78,10 @@ function criarListaDeUsuarios(dado, elemento){
         ulNova.classList.add('lista-usuario');
 
         const listaHTML = dado.map(usuario => {
-            return `<li class="usuario">${usuario.nome} - ${usuario.email}</li>`; // return aqui
+            return `<div class="usuario-total">
+                        <h3 class="titulo-usuario">${usuario.nome} </h3> 
+                        <li class="usuario">${usuario.email}</li>
+                    </div>`; // return aqui
         }).join('');
 
         ulNova.innerHTML = listaHTML; // dentro da ul vai ter a lista de usuarios

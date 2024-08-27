@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/*as tonalidades precisam ser verdes ou brancas (cores mais claras) */
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-Medium;
+    src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-Bold;
+    src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-SemiBold;
+    src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
+  }
+  
+  /*//////////////////////////////////////////////////////////////////
+  [ RESTYLE TAG ]*/
+  
+  * {
+      margin: 0px; 
+      padding: 0px; 
+      box-sizing: border-box;
+  }
+  
+  body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+
+}
+
+/* ul = lista-usuario li= usuario*/
+
+.lista-usuario {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.titulo-usuario {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+    background-color: #57b846;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    text-align: center;
+}
+
+.usuario-total {
+    width: 300px;
+    margin: 10px;
+    padding-bottom: 30px;
+    
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.usuario {
+    padding: 30px;
+    text-align: center;
+}
