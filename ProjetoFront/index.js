@@ -11,24 +11,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    const formRemove = document.querySelector('.formulario-remover');
-    if (formRemove){
-        formRemove.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            await deletarUsuario();
-        });
-    }
-
-    const botaoLista = document.querySelector('.botao-lista');
-    if (botaoLista) {
-        botaoLista.addEventListener('click', async () => {
-            window.location.href = 'listar.html'; // mudar isso aqui
-        });
-    }
+    /*A verificação if (window.location.pathname.endsWith('listar.html')) 
     
+    dentro do evento de submissão do formulário de administração não será
+    executada após o redirecionamento, pois o script é executado antes do redirecionamento. */
+
     if (window.location.pathname.endsWith('listar.html')) {
         listarUsuarios();
     }
+
+    const formAdm = document.getElementById('form-adm');
+    if (formAdm){
+        const usernameAdm = document.getElementById('usernameAdm');
+        const passwordAdm = document.getElementById('passwordAdm');
+        formAdm.addEventListener('submit', async (event) => {
+            if (usernameAdm.value === 'admin' && passwordAdm.value === 'admin'){
+                event.preventDefault();
+                window.location.href = '/ProjetoFront/listar.html'; // Caminho absoluto
+                
+            }
+            else {
+                alert('Usuário ou senha inválidos');
+            }
+        });
+    }
+
+
+    
 });
 
 async function cadastrarUsuario(){
