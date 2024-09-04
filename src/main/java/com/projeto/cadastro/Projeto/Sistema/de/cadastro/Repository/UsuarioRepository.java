@@ -8,6 +8,9 @@ import com.projeto.cadastro.Projeto.Sistema.de.cadastro.model.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     public UserDetails findByNome(String nome);
 
+
     //public UserDetails deleteById(Long id);
     public UserDetails findByEmail(String email);
+
+    public void deleteByNome(String nome);
 }

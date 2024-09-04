@@ -40,12 +40,25 @@ public class UserService {
 
 
     // deletar usuario por id
-    public void deleteUsuario(Long id) {
+    // public void deleteUsuario(Long id) {
 
-        if (!usuarioRepository.existsById(id)){
+    //     if (!usuarioRepository.existsById(id)){
+    //         throw new IllegalArgumentException("Usuário não encontrado.");
+    //     }
+    //     usuarioRepository.deleteById(id);
+    // }
+
+    // deletar usuario por nome
+    public void deleteUsuarioPorNome(String nome) {
+
+
+        // e se o usuario não existir?
+        if (usuarioRepository.findByNome(nome) == null){
             throw new IllegalArgumentException("Usuário não encontrado.");
         }
-        usuarioRepository.deleteById(id);
+
+        usuarioRepository.deleteByNome(nome);
+       
     }
     
 }

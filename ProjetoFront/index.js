@@ -11,33 +11,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    /*A verificação if (window.location.pathname.endsWith('listar.html')) 
-    
-    dentro do evento de submissão do formulário de administração não será
-    executada após o redirecionamento, pois o script é executado antes do redirecionamento. */
-
     if (window.location.pathname.endsWith('listar.html')) {
         listarUsuarios();
     }
 
+    const formularioRemover = document.querySelector('.formulario-remover');
+    if (formularioRemover) {
+        formularioRemover.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            await deletarUsuario();
+        });
+    }
+
     const formAdm = document.getElementById('form-adm');
-    if (formAdm){
+    if (formAdm) {
         const usernameAdm = document.getElementById('usernameAdm');
         const passwordAdm = document.getElementById('passwordAdm');
         formAdm.addEventListener('submit', async (event) => {
-            if (usernameAdm.value === 'admin' && passwordAdm.value === 'admin'){
-                event.preventDefault();
+            event.preventDefault();
+            if (usernameAdm.value === 'admin' && passwordAdm.value === 'admin') {
                 window.location.href = '/ProjetoFront/listar.html'; // Caminho absoluto
-                
-            }
-            else {
+            } else {
                 alert('Usuário ou senha inválidos');
             }
         });
     }
-
-
-    
 });
 
 async function cadastrarUsuario(){
@@ -120,9 +118,9 @@ async function listarUsuarios(){
 
 async function deletarUsuario(){
 
-    var id = document.getElementById('id').value;
+    var nome = document.getElementById('nomeDelete').value;
 
-    const response = await fetch(`http://localhost:8080/user/${id}`, {
+    const response = await fetch(`http://localhost:8080/user/nome/${nome}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'

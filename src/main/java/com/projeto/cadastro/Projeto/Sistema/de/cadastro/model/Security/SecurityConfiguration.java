@@ -28,7 +28,7 @@ public class SecurityConfiguration {
             .authorizeHttpRequests(auth -> auth // autoriza as requisições
                 .requestMatchers("/user").permitAll()
                 .requestMatchers("/user/listar").permitAll()
-                .requestMatchers("/user/{id}").permitAll() // permite que a requisição de login seja feita sem autenticação
+                .requestMatchers("/user/nome/{nome}").permitAll() // permite que a requisição de login seja feita sem autenticação
                 .anyRequest().authenticated()) // qualquer outra requisição deve ser autenticada
             .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class); // adiciona o filtro de segurança antes do filtro de autenticação
 

@@ -42,11 +42,20 @@ public class UserController {
         return userService.listarUsuario();
     }
 
+    // @CrossOrigin(origins = "http://127.0.0.1:5501")
+    // @Transactional
+    // @DeleteMapping("/user/{id}")
+    // public void deleteUsuario(@PathVariable Long id) {
+    //     userService.deleteUsuario(id);
+    // }
+
+    // deletar usuario por nome
     @CrossOrigin(origins = "http://127.0.0.1:5501")
     @Transactional
-    @DeleteMapping("/user/{id}")
-    public void deleteUsuario(@PathVariable Long id) {
-        userService.deleteUsuario(id);
+    @DeleteMapping("/user/nome/{nome}")
+    public void deleteUsuarioPorNome(@PathVariable String nome) {
+        System.out.println("deletei");
+        userService.deleteUsuarioPorNome(nome);
     }
 
     
