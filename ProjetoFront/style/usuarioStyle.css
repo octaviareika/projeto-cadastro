@@ -34,6 +34,7 @@
   body, html {
       height: 100%;
       font-family: 'Poppins', sans-serif;
+      background-color: #ebeeef;
 
 }
 
@@ -85,28 +86,70 @@
     transition: 0.3s;
 }
 
+.titulo-lista {
+    text-align: center;
+    color: #609348;
+    font-size: 50px;
+    margin-top: 10px;
+}
+
 .usuario {
     padding: 30px;
     text-align: center;
 }
 
-.titulo-remover {
-    margin-top: 40px;
+.p-lista {
+    font-size: 20px;
+    color: #80b268;
     text-align: center;
+}
+
+.titulo-remover {
+    margin-top: 10px;
+    text-align: center;
+    color: #388e10;
+}
+
+.remover-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
 }
 
 .formulario-remover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
     flex-direction: column;
+    border: #388e10 1px solid;
+    margin: 0 auto;
+    width: 400px;
+    height: 200px;
+    background-color: #7aff78b9;
 }
 
-#id {
+
+
+#nomeDelete {
     width: 300px;
     padding: 10px;
     margin: 20px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+.remover {
+    padding: 10px 20px;
+    background-color: rgb(87, 184, 70, 1.0);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remover:hover {
+    background-color: rgba(66, 239, 35, 1.0);
+    transition: 0.5s;
 }

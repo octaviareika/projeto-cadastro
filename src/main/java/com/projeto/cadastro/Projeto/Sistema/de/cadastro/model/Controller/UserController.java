@@ -54,7 +54,7 @@ public class UserController {
     @Transactional
     @DeleteMapping("/user/nome/{nome}")
     public void deleteUsuarioPorNome(@PathVariable String nome) {
-        System.out.println("deletei");
+       // System.out.println("deletei");
         userService.deleteUsuarioPorNome(nome);
     }
 
